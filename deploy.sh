@@ -31,7 +31,7 @@ cd ..
 rm -rf out/**/* || exit 0
 
 # Run our compile script
-doCompile
+jekyll build --destination out
 
 # Now let's go have some fun with the cloned repo
 cd out
