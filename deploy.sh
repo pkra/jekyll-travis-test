@@ -32,9 +32,10 @@ rm -rf out/**/* || exit 0
 
 # Run our compile script
 echo "building jekyll"
+node node_modules/mathjax-node-page/bin/mjpage --noGlobalSVG --fragment=true < about.md | sponge about.md
+cat out/about.md
 jekyll build --destination out
-node node_modules/mathjax-node-page/bin/mjpage --noGlobalSVG --fragment=true < out/about.md | sponge out/about.md
-rm -rf node_modules
+
 # Now let's go have some fun with the cloned repo
 cd out
 git config user.name "Travis CI"
