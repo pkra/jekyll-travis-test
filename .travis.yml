@@ -17,5 +17,5 @@ before_install:
   - bundle check || bundle install
 env:
   global:
-  - ENCRYPTION_LABEL: "<.... encryption label from previous step ....>"
+  - ENCRYPTION_LABEL: "d998923d8bd8"
   - COMMIT_AUTHOR_EMAIL: "test@travis.com"
