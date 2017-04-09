@@ -34,7 +34,7 @@ rm -rf out/**/* || exit 0
 echo "building jekyll"
 jekyll build --destination out
 node node_modules/mathjax-node-page/bin/mjpage --noGlobalSVG --fragment=true < out/about.md | sponge out/about.md
-
+rm -rf node_modules
 # Now let's go have some fun with the cloned repo
 cd out
 git config user.name "Travis CI"
