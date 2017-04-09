@@ -1,0 +1,21 @@
+# .travis.yml
+
+language: node_js
+sudo: required
+script: bash ./deploy.sh
+branches:
+  except:
+  - master
+node_js:
+ - '6.1'
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+  - rvm install 2.1
+  - rvm use 2.1
+  - . $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1
+  - gem install bundler
+  - bundle check || bundle install
+env:
+  global:
+  - ENCRYPTION_LABEL: "<.... encryption label from previous step ....>"
+  - COMMIT_AUTHOR_EMAIL: "test@travis.com"
