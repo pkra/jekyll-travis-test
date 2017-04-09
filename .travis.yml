@@ -4,8 +4,8 @@ language: node_js
 sudo: required
 script: bash ./deploy.sh
 branches:
-  except:
-  - master
+  only:
+  - source
 node_js:
  - '6.1'
 before_install:
